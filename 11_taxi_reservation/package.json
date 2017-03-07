@@ -1,0 +1,31 @@
+{
+    "name": "11_taxi_reservation",
+    "title": "Taxi Reservation",
+    "version": "2.0.0",
+    "license": "UNLICENSED",
+    "private": true,
+    "repository": "http://subversion-ign/svn/html5demos/trunk/demos/11_taxi_reservation/",
+    "devDependencies": {
+        "grunt": "1.0.1",
+
+        "grunt-contrib-clean": "^1.0.0",
+        "grunt-contrib-compass": "^1.1.1",
+        "grunt-contrib-concat": "^1.0.1",
+        "grunt-contrib-copy": "^1.0.0",
+        "grunt-contrib-cssmin": "^1.0.1",
+        "grunt-contrib-imagemin": "^1.0.0",
+        "grunt-contrib-jst": "^1.0.0",
+        "grunt-contrib-qunit": "^1.2.0",
+        "grunt-contrib-uglify": "^1.0.1",
+        "grunt-contrib-watch": "1.0.0",
+
+        "grunt-jsdoc": "^2.0.0",
+        "grunt-jslint": "^1.1.14",
+        "grunt-processhtml": "^0.3.13",
+        "grunt-qunit-junit": "~0.3.1",
+        "grunt-search": "0.1.8",
+        "grunt-text-replace": "0.4.0",
+        "grunt-version": "1.1.1",
+        "ink-docstrap": "^1.1.4"
+    }
+}

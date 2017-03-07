@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jslint>
+<file name="src/app/app.js">
+</file>
+<file name="src/data/include.data.js">
+</file>
+<file name="src/app/init.js">
+</file>
+<file name="src/consts.js">
+</file>
+<file name="src/app/core/appParameters.js">
+</file>
+<file name="src/app/core/client.js">
+</file>
+<file name="src/app/core/mediator.js">
+</file>
+<file name="src/app/core/core.js">
+</file>
+<file name="src/app/core/strings.js">
+</file>
+<file name="src/app/core/pos.js">
+</file>
+<file name="src/app/core/stringtable.js">
+</file>
+<file name="src/app/views/footer.js">
+</file>
+<file name="src/app/views/header.js">
+</file>
+<file name="src/app/views/slider.js">
+</file>
+<file name="src/app/modules/confirm_information/view.js">
+</file>
+<file name="src/app/modules/check_location/view.js">
+</file>
+<file name="src/app/modules/home/view.js">
+</file>
+<file name="src/app/modules/receipt/view.js">
+</file>
+<file name="src/app/modules/search_destination/view.js">
+</file>
+<file name="src/app/modules/search_location/view.js">
+</file>
+<file name="src/app/modules/searching/view.js">
+</file>
+<file name="src/app/services/modal.js">
+</file>
+</jslint>

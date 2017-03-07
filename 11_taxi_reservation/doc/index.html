@@ -1,0 +1,1820 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Taxi Reservation Index</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.simplex.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top navbar-inverse">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">Taxi Reservation</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="app.html">app</a></li><li><a href="app.appParameters.html">app.appParameters</a></li><li><a href="app.core.html">app.core</a></li><li><a href="app.initializer.html">app.initializer</a></li><li><a href="app.mediator.html">app.mediator</a></li><li><a href="app.mod.html">app.mod</a></li><li><a href="app.pos.html">app.pos</a></li><li><a href="app.strings.html">app.strings</a></li><li><a href="app.stringtable.html">app.stringtable</a></li><li><a href="app.view.html">app.view</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="app.Router.html">app.Router</a></li><li><a href="app.view.Footer.html">app.view.Footer</a></li><li><a href="app.view.Header.html">app.view.Header</a></li><li><a href="app.view.Slider.html">app.view.Slider</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="events.list.html" class="dropdown-toggle" data-toggle="dropdown">Events<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="app.mediator.html#event:modal">app.mediator#event:modal</a></li><li><a href="app.mediator.html#event:viewchangefooter">app.mediator#event:viewchangefooter</a></li><li><a href="app.mediator.html#event:viewchangeheader">app.mediator#event:viewchangeheader</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="global.html">Global</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+		<div class="col-sm-3 col-md-3">
+            <form class="navbar-form" role="search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+	</div>
+
+</div>
+</div>
+
+
+<div class="container" id="toc-content">
+<div class="row">
+
+	
+	<div class="col-md-8">
+	
+		<div id="main">
+			
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+    <section class="readme-section">
+        <article><h1>Taxi Reservation</h1><p>Application to call a taxi from Telium</p>
+<h2>General Notes</h2><p>Notes applied to all HTML5 applications.</p>
+<h3>Dev Environment</h3><ul>
+<li>Install <a href="https://www.ruby-lang.org/en/installation/">Ruby</a> and put its <code>bin</code> folder in the PATH environment variable</li>
+<li>Install <a href="http://compass-style.org/install/">compass</a> using Ruby (for proxy, use <code>--http-proxy http://&quot;[user]&quot;:&quot;[password]&quot;@[proxy_host]:[port]</code> option)<pre class="prettyprint source lang-bash"><code>  gem update --system
+  gem install compass</code></pre></li>
+<li>Install <a href="http://nodejs.org/download/">NodeJS</a> and put its folder in the PATH environment variable</li>
+<li><p>Install <a href="http://gruntjs.com/getting-started">Grunt</a> globally using:</p>
+<pre class="prettyprint source lang-bash"><code>  npm install grunt-cli -g</code></pre><p>  The command should output where Grunt will be installed, for instance, <code>C:\Users\Admin\AppData\Roaming\npm\grunt</code>. Put this folder in the PATH environment variable.<br>  If you are using a web proxy, a valid workaround is to config the proxy host on npm config.<br>  Note that the last line must be also used on <a href="file://./bin/build.bat">bin/build.bat</a> and <a href="file://./bin/watch.bat">bin/watch.bat</a> and change [user], [password], [proxy_host] and [port] according to our environment.<br>  Use:</p>
+<pre class="prettyprint source lang-bash"><code>  set HTTPS_PROXY=http://&quot;[user]&quot;:&quot;[password]&quot;@[proxy_host]:[port]
+  set HTTP_PROXY=http://&quot;[user]&quot;:&quot;[password]&quot;@[proxy_host]:[port]
+  npm config set registry http://registry.npmjs.org/
+  npm config set proxy %HTTP_PROXY%
+  npm config set https-proxy %HTTP_PROXY%
+  npm config set strict-ssl false
+
+  npm --proxy %HTTP_PROXY% --without-ssl --insecure -g install [package]</code></pre></li>
+<li>Install <a href="http://bower.io">Bower</a>, used for project dependency management.</li>
+<li>Install <a href="http://phantomjs.org/">PhantomJS</a> used for automated tests</li>
+<li><a href="https://github.com/adobe/brackets/releases">Brackets</a> recommended as code editor, with the following extensions:<ul>
+<li><a href="https://github.com/DimitrK/exclude-indexing-filetree">Brackets Exclude Indexing FileTree</a></li>
+<li><a href="https://github.com/Wikunia/brackets-FuncDocr">FuncDocr</a></li>
+<li><a href="http://emmet.io/">Emmet</a></li>
+<li><a href="https://github.com/brackets-beautify/brackets-beautify">Beautify</a></li>
+<li><a href="https://github.com/gruehle/MarkdownPreview">MarkdownPreview</a></li>
+</ul>
+</li>
+</ul>
+<h3>Build, Watch and Tests</h3><p>Use <a href="file://./bin/build.bat">bin/build.bat</a> to build and <a href="file://./bin/watch.bat">bin/watch.bat</a> to generate css from sass and to pre-compiling jst templates.<br>This configuration uses Static Analyses with JSLint and Unit Test with QUnit, Sinon and Istanbul (for test coverage reports).<br>The app_template provides some tests for some <code>core</code> objects, and for basic application functionalities, like <code>modules</code>.<br>For those tests to work, we recommend that all <code>modules</code> can be accessed in the app without setting previous objects. This way, the basic test wont fail if a var is not setted by another previous <code>module</code>, for example, before the module is constructed. If an object is indeed necessary, please, set it to a default value on the <code>module</code>.<br>Every application should also implement its specific unit test cases.<br>To run a standalone Unit test <a href="file://./test/index.html">test/index.html</a>.<br>To generate test reports, use <a href="file://./bin/build.bat">bin/build.bat</a> and the reports will be saved in <a href="file://./test/output/coverage/index.html">test/output/coverage/index.html</a> and <a href="file://./test/output/report/cobertura-coverage.xml">test/output/report/index.html</a> for coverage report, and <a href="file://./test/output/results/TEST-index.xml">test/output/results/TEST-index.xml</a> for Unit test reports.<br>Use <a href="file://./bin/release.bat">bin/release.bat</a> to generate an release version in <a href="file://./dist/">dist/</a> directory. This release version will also override and HEAD 0 in CHANGELOG.md and consts.version by the version specified on <code>package.json</code>. Once a release is made, the CHANGELOG.md must include another HEAD 0 and the package.json must be updated with a new version, otherwise the new release will fail.<br>There is also a <a href="file://./bin/packing.bat">bin/packing.bat</a> that validates if there is any pending changes to commit, and is used after the release to ensure that nothing is left uncommitted. If everything is OK, then a zip package is generated with the application folder, and the ignored files and directories in subversion are ignored to generate this package. This script needs 7zip and subversion to be on <code>PATH</code> environment variable.<br>If you need a clean build, use <a href="file://./bin/clean.bat">bin/clean.bat</a> to delete node_modules and clean npm cache's.</p>
+<h3>SVN tricks</h3><p>Use the command below to ignore all the non-essentials project files.</p>
+<pre class="prettyprint source lang-bash"><code>svn propset svn:ignore -RF svn-ignore.txt .</code></pre><p>And for deleting .orig from merge tool. Remove /p to non-prompt.</p>
+<pre class="prettyprint source lang-bash"><code>del /s /p *.orig</code></pre><h3>Project Basic Structure (Single Page Application)</h3><ul>
+<li><code>.brackets.json</code> - Config file for <code>Brackets</code>, with some ignored dirs  </li>
+<li><code>Gruntfile.js</code> - <code>Grunt</code> config file, with automated tasks  </li>
+<li><code>package.json</code> - <code>npm</code> packages to be installed with <code>npm install</code>  </li>
+<li><code>jsdoc.json</code> - <code>JSDoc</code> configuration file, to be used with <code>ink-docstrap</code>  </li>
+<li><strong><code>bin/</code></strong> - folder with custom binaries and executables  <ul>
+<li><code>bin/clean.bat</code> - Clean NPM dependencies, to start from scratch  </li>
+<li><code>bin/build.bat</code> - Execute 3 tasks: generate dist files (Build) unit test the application (Test) and run static analyses (Lint)  </li>
+<li><code>bin/watch.bat</code> - Generate .css from sass (.scss) and combined.js from JST templates (.tpl) until it is closed.  </li>
+<li><code>bin/packing.bat</code> - Exports a zip from svn, checking if there is a new version and if there is nothing more to commit  </li>
+<li><code>bin/release.bat</code> - Generate release with semver from package.json  </li>
+</ul>
+</li>
+<li><del><strong><code>dist/</code></strong> - Distributable folder, with compressed files (gets cleaned every build)</del>  </li>
+<li><strong><code>doc/</code></strong> - folder with documentation for app     </li>
+<li><strong><code>src/</code></strong> - Application source folder  <ul>
+<li><code>src/.bowerrc</code> and <code>src/bower.json</code> - <code>Bower</code> config files, that is used to manager application libs  </li>
+<li><code>src/config.rb</code> - <code>Compass</code> config file, with css destination file  </li>
+<li><code>src/config-require.js</code> - Application config of loading components, to be used by <code>requirejs</code> in app development environment and test environment  </li>
+<li><code>src/consts.js</code> - Application specific constants, doesn't get minified nor combined.  </li>
+<li><code>src/index.html</code> - Single page for application    </li>
+<li><strong><code>src/app/</code></strong> - folder with application .js files  <ul>
+<li><code>src/app/app.js</code> - Application main file  </li>
+<li><code>src/app/init.js</code> - Bootstrap application. Initialization of app components and mocked data goes here.  </li>
+<li><code>src/app/load.js</code> - <code>requirejs</code> load file, just to start <code>src/app/init.js</code>   </li>
+<li><strong><code>src/app/collections/</code></strong> - folder with Backbone collections files   </li>
+<li><strong><code>src/app/core/</code></strong> - folder with core files  <ul>
+<li><code>src/app/core/appParameters.js</code> - app parameters (like appName) </li>
+<li><code>src/app/core/mediator.js</code> - fire services and views like footer and header  </li>
+<li><code>src/app/core/core.js</code> - abstract location, print and other core functions  </li>
+<li><code>src/app/core/pos.js</code> - integrated with PoS functions  </li>
+<li><code>src/app/core/strings.js</code> - Strings in i18n and its loading  </li>
+<li><code>src/app/core/stringtable.js</code> - helper functions to i18n  </li>
+</ul>
+</li>
+<li><strong><code>src/app/models/</code></strong> - folder with Backbone models files (like user.js or product.js)  </li>
+<li><strong><code>src/app/modules/</code></strong> - folder with view modules files (like <code>src/app/modules/home/view.js</code>). On most cases, <code>home</code> is the module that is initialized after the splash screen.  </li>
+<li><strong><code>src/app/services/</code></strong> - folder with application services files, like <code>modal.js</code>  </li>
+<li><strong><code>src/app/templates/</code></strong> - folder with template .tpl files, that will be wrapped in js functions in <code>src/app/templates/compiled/compiled.js</code>~~  <ul>
+<li><del><code>src/app/templates/compiled/compiled.js</code> - JST compiled file, from .tpl files on <strong><code>src/app/templates/</code></strong></del>  </li>
+</ul>
+</li>
+<li><strong><code>src/app/views/</code></strong> - folder with views for header, footer and slider  <ul>
+<li><code>src/app/views/footer.js</code> - View for footer, with usually 2 buttons.  </li>
+<li><code>src/app/views/header.js</code> - View for header, with a title and a back button.  </li>
+<li><code>src/app/views/slider.js</code> - View for slider, responsible for application flow (change of views).  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><code>src/css/</code></strong> - folder with application STATIC .css files  <ul>
+<li><del><code>src/css/app.css</code> - App static css, generated by <code>src/sass/app.scss</code> sass file, with <code>compass</code></del>  </li>
+<li><code>src/css/reset.css</code> - Clear css properties   </li>
+</ul>
+</li>
+<li><strong><code>src/data/</code></strong> - folder with application data files, like base64 images  <ul>
+<li><code>src/data/data.js</code> - data-include Grunt plug-in will search for include directives like <code>/*include -bu order-appetizer.jpg */</code> and, on the case of the example convert the image in base64, to be saved on a similar data.js, called <code>src/data/include.data.js</code>  </li>
+<li><del><code>src/data/include.data.js</code> - Generated to simulate API behaiour</del>   </li>
+</ul>
+</li>
+<li><strong><code>src/fonts/</code></strong> - folder with application font files  </li>
+<li><strong><code>src/libs/</code></strong> - folder with application dependencies (like <code>zepto</code>, <code>backbone</code> and <code>requirejs</code>). Managed by <code>bower</code>.  </li>
+<li><strong><code>src/sass/</code></strong> - folder with application .scss files  <ul>
+<li><code>src/sass/app.scss</code> - , to be used by <code>compass</code> to generate <code>src/css/app.css</code>  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>test/index.html</code> - Run application Unit Tests  </li>
+<li><code>test/tests-require.js</code> - Load Unit tests using <code>requirejs</code>  </li>
+<li><strong><code>test/app/</code></strong> - Unit test folder  </li>
+<li><strong><code>test/libs/</code></strong> - Test libs, Sinon and QUnit  </li>
+<li><del><strong><code>test/output/</code></strong> - Test Reports output folder (gets cleaned every build)</del>   </li>
+</ul>
+<h2>Application Notes</h2><p>Notes applied only to this specific application.</p>
+<h3>MapProxy</h3><p>This application uses MapProxy as service for routing. Please, edit consts.js var's 'maphost' to a valid MapProxy service endpoint.</p>
+<h2>CHANGELOG</h2><h3>2.0.0 (May 10, 2016)</h3><ul>
+<li>Update from app_template#1.0.0<ul>
+<li>New TetraJS and other libraries update</li>
+<li>Fixing unit test engine</li>
+<li>Updating dev dependencies</li>
+<li>Update basic README with new informations</li>
+</ul>
+</li>
+</ul>
+<h3>1.1.2 (December 16, 2014)</h3><ul>
+<li>Added skip button</li>
+<li>Show prices in dollar</li>
+<li>Applied CSS to use application in widescreen</li>
+<li>Include map size to return in client.js</li>
+</ul>
+<h3>1.1.1</h3><ul>
+<li>Receipt location is same as search</li>
+</ul>
+<h3>1.1.0 (October 29, 2014)</h3><ul>
+<li>Make reactivy faster using mouseup</li>
+<li>Add maphost on grunt</li>
+<li>Change default location</li>
+<li>Make back btn bigger</li>
+<li>Image optimisation</li>
+</ul>
+<h3>1.0.0 (October 27, 2014)</h3><ul>
+<li>Version</li>
+<li>Without splash screen js code (only splash image on top-level)</li>
+<li>byPassReadCard</li>
+<li>Fix payment implementation</li>
+</ul>
+<h3>0.0.6 (October 20, 2014)</h3><ul>
+<li>Integrate with telium lib and apply the treatment for pay with KO or OK</li>
+<li>Change EO in log to 2% of total value</li>
+</ul>
+<h3>0.0.5 (October 15, 2014)</h3><ul>
+<li>Receipt in 384px width</li>
+<li>More tests</li>
+<li>Experiment to preventing multiple clicks on printing receipt</li>
+</ul>
+<h3>0.0.4 (October 7, 2014)</h3><ul>
+<li>New CHANGELOG and README using Markdown.</li>
+<li>Unit tests</li>
+<li>Receipt in 275px width</li>
+<li>Integrated with Telium lib for payment.</li>
+</ul>
+<h3>0.0.3 (September 18, 2014)</h3><ul>
+<li>Log according to JSONLog_version: 1.0</li>
+</ul>
+<h3>0.0.2 (August 25, 2014)</h3><ul>
+<li>Printing Receipt</li>
+<li>BUG: &quot;&lt;!DOCTYPE html&gt;&quot; directive causes window.print() miss 40px on print receipt. (without it, the receipt is formatted correctly)</li>
+<li>Please, change all vars and properties in consts.js, like log_endpoint, according to your env.</li>
+<li>Dynamic Map </li>
+<li>Several UI and flow changes.</li>
+</ul>
+<h3>0.0.1 (August 1, 2014)</h3><ul>
+<li>Template pré-compiling, node cache, css review.</li>
+</ul></article>
+    </section>
+
+
+
+
+
+
+
+	<h1 class="page-title">Index</h1>
+<section>
+
+<header>
+    
+        <h2>
+        src/app/app.js
+        </h2>
+        
+    
+</header>
+
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Application Module</p></div>
+        
+
+        
+<dl class="details">
+    
+
+	
+	<dt class="tag-version method-doc-label method-doc-details-label">Version:</dt>
+	<dd class="tag-version">
+		<ul class="dummy">
+			<li>2.0.0</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+	<dt class="tag-author method-doc-label method-doc-details-label">Author:</dt>
+	<dd class="tag-author">
+		<ul>
+			<li>Rafael R Itajuba</li>
+			
+			<li>Danilo Bevilacqua Scavassa</li>
+			
+			<li>luis novo</li>
+			</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="app.js.html">app.js</a>,
+				 <a href="app.js.html#sunlight-1-line-3">line 3</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+	<h1 class="page-title">Index</h1>
+<section>
+
+<header>
+    
+        <h2>
+        src/app/core/appParameters.js
+        </h2>
+        
+    
+</header>
+
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>AppParameters Module</p></div>
+        
+
+        
+<dl class="details">
+    
+
+	
+	<dt class="tag-version method-doc-label method-doc-details-label">Version:</dt>
+	<dd class="tag-version">
+		<ul class="dummy">
+			<li>2.0.0</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+	<dt class="tag-author method-doc-label method-doc-details-label">Author:</dt>
+	<dd class="tag-author">
+		<ul>
+			<li>Rafael R Itajuba</li>
+			
+			<li>Danilo Bevilacqua Scavassa</li>
+			</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="core_appParameters.js.html">core/appParameters.js</a>,
+				 <a href="core_appParameters.js.html#sunlight-1-line-3">line 3</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+	<h1 class="page-title">Index</h1>
+<section>
+
+<header>
+    
+        <h2>
+        src/app/core/core.js
+        </h2>
+        
+    
+</header>
+
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Core Module</p></div>
+        
+
+        
+<dl class="details">
+    
+
+	
+	<dt class="tag-version method-doc-label method-doc-details-label">Version:</dt>
+	<dd class="tag-version">
+		<ul class="dummy">
+			<li>2.0.0</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+	<dt class="tag-author method-doc-label method-doc-details-label">Author:</dt>
+	<dd class="tag-author">
+		<ul>
+			<li>Rafael R Itajuba</li>
+			
+			<li>Danilo Bevilacqua Scavassa</li>
+			</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="core_core.js.html">core/core.js</a>,
+				 <a href="core_core.js.html#sunlight-1-line-3">line 3</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+	<h1 class="page-title">Index</h1>
+<section>
+
+<header>
+    
+        <h2>
+        src/app/core/mediator.js
+        </h2>
+        
+    
+</header>
+
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Mediator Module</p></div>
+        
+
+        
+<dl class="details">
+    
+
+	
+	<dt class="tag-version method-doc-label method-doc-details-label">Version:</dt>
+	<dd class="tag-version">
+		<ul class="dummy">
+			<li>2.0.0</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+	<dt class="tag-author method-doc-label method-doc-details-label">Author:</dt>
+	<dd class="tag-author">
+		<ul>
+			<li>Rafael R Itajuba</li>
+			
+			<li>Danilo Bevilacqua Scavassa</li>
+			
+			<li>luis novo</li>
+			</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="core_mediator.js.html">core/mediator.js</a>,
+				 <a href="core_mediator.js.html#sunlight-1-line-1">line 1</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+	<h1 class="page-title">Index</h1>
+<section>
+
+<header>
+    
+        <h2>
+        src/app/core/pos.js
+        </h2>
+        
+    
+</header>
+
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>PoS Module</p></div>
+        
+
+        
+<dl class="details">
+    
+
+	
+	<dt class="tag-version method-doc-label method-doc-details-label">Version:</dt>
+	<dd class="tag-version">
+		<ul class="dummy">
+			<li>2.0.0</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+	<dt class="tag-author method-doc-label method-doc-details-label">Author:</dt>
+	<dd class="tag-author">
+		<ul>
+			<li>Rafael R Itajuba</li>
+			
+			<li>Danilo Bevilacqua Scavassa</li>
+			</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="core_pos.js.html">core/pos.js</a>,
+				 <a href="core_pos.js.html#sunlight-1-line-3">line 3</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+	<h1 class="page-title">Index</h1>
+<section>
+
+<header>
+    
+        <h2>
+        src/app/core/strings.js
+        </h2>
+        
+    
+</header>
+
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Strings Module</p></div>
+        
+
+        
+<dl class="details">
+    
+
+	
+	<dt class="tag-version method-doc-label method-doc-details-label">Version:</dt>
+	<dd class="tag-version">
+		<ul class="dummy">
+			<li>2.0.0</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+	<dt class="tag-author method-doc-label method-doc-details-label">Author:</dt>
+	<dd class="tag-author">
+		<ul>
+			<li>Rafael R Itajuba</li>
+			
+			<li>Danilo Bevilacqua Scavassa</li>
+			</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="core_strings.js.html">core/strings.js</a>,
+				 <a href="core_strings.js.html#sunlight-1-line-1">line 1</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+	<h1 class="page-title">Index</h1>
+<section>
+
+<header>
+    
+        <h2>
+        src/app/core/stringtable.js
+        </h2>
+        
+    
+</header>
+
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Stringtable Module</p></div>
+        
+
+        
+<dl class="details">
+    
+
+	
+	<dt class="tag-version method-doc-label method-doc-details-label">Version:</dt>
+	<dd class="tag-version">
+		<ul class="dummy">
+			<li>2.0.0</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+	<dt class="tag-author method-doc-label method-doc-details-label">Author:</dt>
+	<dd class="tag-author">
+		<ul>
+			<li>Rafael R Itajuba</li>
+			
+			<li>Danilo Bevilacqua Scavassa</li>
+			</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="core_stringtable.js.html">core/stringtable.js</a>,
+				 <a href="core_stringtable.js.html#sunlight-1-line-3">line 3</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+	<h1 class="page-title">Index</h1>
+<section>
+
+<header>
+    
+        <h2>
+        src/app/init.js
+        </h2>
+        
+    
+</header>
+
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Bootstraps the application</p></div>
+        
+
+        
+<dl class="details">
+    
+
+	
+	<dt class="tag-version method-doc-label method-doc-details-label">Version:</dt>
+	<dd class="tag-version">
+		<ul class="dummy">
+			<li>2.0.0</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+	<dt class="tag-author method-doc-label method-doc-details-label">Author:</dt>
+	<dd class="tag-author">
+		<ul>
+			<li>Rafael R Itajuba</li>
+			
+			<li>Danilo Bevilacqua Scavassa</li>
+			</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="init.js.html">init.js</a>,
+				 <a href="init.js.html#sunlight-1-line-3">line 3</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+	<h1 class="page-title">Index</h1>
+<section>
+
+<header>
+    
+        <h2>
+        src/app/services/modal.js
+        </h2>
+        
+    
+</header>
+
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Modal Module</p></div>
+        
+
+        
+<dl class="details">
+    
+
+	
+	<dt class="tag-version method-doc-label method-doc-details-label">Version:</dt>
+	<dd class="tag-version">
+		<ul class="dummy">
+			<li>2.0.0</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+	<dt class="tag-author method-doc-label method-doc-details-label">Author:</dt>
+	<dd class="tag-author">
+		<ul>
+			<li>Rafael R Itajuba</li>
+			
+			<li>Danilo Bevilacqua Scavassa</li>
+			
+			<li>luis novo</li>
+			</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="services_modal.js.html">services/modal.js</a>,
+				 <a href="services_modal.js.html#sunlight-1-line-3">line 3</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+	<h1 class="page-title">Index</h1>
+<section>
+
+<header>
+    
+        <h2>
+        src/app/views/footer.js
+        </h2>
+        
+    
+</header>
+
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Footer Module</p></div>
+        
+
+        
+<dl class="details">
+    
+
+	
+	<dt class="tag-version method-doc-label method-doc-details-label">Version:</dt>
+	<dd class="tag-version">
+		<ul class="dummy">
+			<li>2.0.0</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+	<dt class="tag-author method-doc-label method-doc-details-label">Author:</dt>
+	<dd class="tag-author">
+		<ul>
+			<li>Rafael R Itajuba</li>
+			
+			<li>Danilo Bevilacqua Scavassa</li>
+			
+			<li>luis novo</li>
+			</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="views_footer.js.html">views/footer.js</a>,
+				 <a href="views_footer.js.html#sunlight-1-line-3">line 3</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+	<h1 class="page-title">Index</h1>
+<section>
+
+<header>
+    
+        <h2>
+        src/app/views/header.js
+        </h2>
+        
+    
+</header>
+
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Header Module</p></div>
+        
+
+        
+<dl class="details">
+    
+
+	
+	<dt class="tag-version method-doc-label method-doc-details-label">Version:</dt>
+	<dd class="tag-version">
+		<ul class="dummy">
+			<li>2.0.0</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+	<dt class="tag-author method-doc-label method-doc-details-label">Author:</dt>
+	<dd class="tag-author">
+		<ul>
+			<li>Rafael R Itajuba</li>
+			
+			<li>Danilo Bevilacqua Scavassa</li>
+			
+			<li>luis novo</li>
+			</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="views_header.js.html">views/header.js</a>,
+				 <a href="views_header.js.html#sunlight-1-line-3">line 3</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+	<h1 class="page-title">Index</h1>
+<section>
+
+<header>
+    
+        <h2>
+        src/app/views/slider.js
+        </h2>
+        
+    
+</header>
+
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Footer Module</p></div>
+        
+
+        
+<dl class="details">
+    
+
+	
+	<dt class="tag-version method-doc-label method-doc-details-label">Version:</dt>
+	<dd class="tag-version">
+		<ul class="dummy">
+			<li>2.0.0</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+	<dt class="tag-author method-doc-label method-doc-details-label">Author:</dt>
+	<dd class="tag-author">
+		<ul>
+			<li>Rafael R Itajuba</li>
+			
+			<li>Danilo Bevilacqua Scavassa</li>
+			
+			<li>luis novo</li>
+			</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="views_slider.js.html">views/slider.js</a>,
+				 <a href="views_slider.js.html#sunlight-1-line-3">line 3</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+		<div class="col-md-3">
+			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
+		</div>
+	
+
+</div>
+</div>
+
+<div class="modal fade" id="searchResults">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Search results</h4>
+      </div>
+      <div class="modal-body"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div>
+
+<footer>
+
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a>
+	
+		on Wed May 11th 2016
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+<script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : true,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			var id = $( heading ).attr( "id" );
+			return id && id.replace(/\~/g, '-inner-').replace(/\./g, '-static-') || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+<script>
+	$( function () {
+		$( '#main' ).localScroll( {
+			offset : { top : 60 } //offset by the height of your header (give or take a few px, see what works for you)
+		} );
+		$( "dt.name" ).each( function () {
+			var $this = $( this ).find("h4");
+			var icon = $( "<i/>" ).addClass( "icon-plus-sign" ).addClass( "pull-right" ).addClass( "icon-white" );
+			var dt = $(this);
+			var children = dt.next( "dd" );
+
+			dt.prepend( icon ).css( {cursor : "pointer"} );
+			dt.addClass( "member-collapsed" ).addClass( "member" );
+
+
+			children.hide();
+
+			dt.children().on( "click", function () {
+				children = dt.next( "dd" );
+				children.slideToggle( "fast", function () {
+
+					if ( children.is( ":visible" ) ) {
+						icon.addClass( "icon-minus-sign" ).removeClass( "icon-plus-sign" ).removeClass( "icon-white" );
+						dt.addClass( "member-open" ).animate( "member-collapsed" );
+					} else {
+						icon.addClass( "icon-plus-sign" ).removeClass( "icon-minus-sign" ).addClass( "icon-white" );
+						dt.addClass( "member-collapsed" ).removeClass( "member-open" );
+					}
+				} );
+			} );
+
+		} );
+	} );
+</script>
+
+
+<!--Google Analytics-->
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		SearcherDisplay.init();
+	});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,715 @@
+@import "spr/*.png";
+
+@font-face {
+    font-family: Roboto;
+    src: url(../fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url("../fonts/Roboto-Bold.ttf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url("../fonts/Roboto-Light.ttf");
+    font-weight: lighter;
+}
+
+html {
+    font-family: Roboto;
+    color: white;
+    font-size: 62.5%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-user-select: none;
+}
+
+body {
+    overflow: hidden;
+    position: absolute;
+
+    background: #FFF url(../img/background.png) no-repeat;
+    width: 320px;
+    height: 480px;
+
+}
+
+h1 {
+    padding-top: 16px;
+    margin-left: 18px;
+    height: 43px;
+    font-weight: lighter;
+    font-size: 2.2rem;
+}
+
+h2 {
+    font-size: 1.9rem;
+    font-weight: bold;
+}
+
+
+input {
+    border: none;
+    height: 34px;
+    margin-left: 5px;
+    margin-top: 2px;
+    
+    width: 240px;
+}
+
+.page {
+    overflow: hidden;
+}
+
+.input {
+    font-size: 13px;
+    height: 41px;
+    margin-left: 10px;
+    margin-top: 12px;
+    text-align: left;
+
+    @include spr-sprite("field");
+    width: 300px;
+
+}
+
+.hide {
+    display: none;
+}
+
+.wrap{
+    text-align: center;
+}
+
+/********************************************
+    HEADER
+********************************************/
+
+.bar {     
+    height: 72px;
+
+    @include spr-sprite("top");
+}
+
+.title { 
+    text-align: center;
+    color: #000;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    font-size: 1.9rem;
+}
+
+.back  {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 48px;
+  height: 48px;
+}
+
+.back span {
+    @include spr-sprite("top-back");
+    position: relative;
+    top: 12px;
+    left: 12px;
+    width: 16px;
+    height: 21px;
+    display:block;
+}
+
+.back:active span {
+    @include spr-sprite("top-backhover");
+}
+
+/********************************************
+    HEADER END
+********************************************/
+
+/********************************************
+    FOOTER
+********************************************/
+
+.footer {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 320px;
+    height: 66px;
+    font-size: 1.2rem;
+    z-index: 9;
+}
+
+.footerSplit .button {
+    width: 50%;
+    float: left;
+}
+
+.footer .button {    
+    height: 100%;
+    cursor: pointer;    
+}
+
+.footer .btn2 { 
+    background: url(../img/btn-bottom.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.footer .btn2:active {    
+    background: url(../img/btn-bottomhover.png) no-repeat ;
+    background-size: 100% 100%;
+}
+
+.footer .btn1 { 
+    background: url(../img/btn-bottom-other.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.footer .btn1:active {    
+    background: url(../img/btn-bottomhover-other.png) no-repeat ;
+    background-size: 100% 100%;
+}
+
+.footerIcon {
+    margin-top: 18px;
+    margin-left: 15px;
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+}
+
+.footerTexts {
+    display: inline-block;
+    width: 110px;
+    text-align: left;
+}
+
+.buttonText {
+    font-size: 1.6rem;
+    font-weight: bold;
+    line-height: 24px;
+    width: 100%;
+    display: inline-block;
+}
+
+.buttonLabel {
+}
+
+.btnAlignCenter{
+    text-align: center;
+}
+
+/********************************************
+    FOOTER END
+********************************************/
+
+/********************************************
+    PRINTING
+********************************************/
+
+@media print {
+    .bar, .footer {
+        display: none;
+    }
+
+    body {
+        width: 384px;
+        height: auto;
+        overflow: auto;
+        background-color: #FFF;
+        background-image: none;
+    }
+}
+
+/********************************************
+    PRINTING END
+********************************************/
+
+/********************************************
+    GENERAL
+********************************************/
+
+.marginTop {
+    margin-top: 282px;
+}
+
+#map {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -9999;
+}
+
+/********************************************
+    GENERAL END
+********************************************/
+
+/********************************************
+    MODAL
+********************************************/
+
+.modal {
+    position: absolute;
+    bottom: 30px;
+    left: 10px;
+    right: 10px;
+    opacity: 0;
+    visibility: none;
+    transition: all 200ms;
+    z-index: 10;
+}
+
+.modal.active {
+    bottom: 50px;
+    opacity: 1;
+    visibility: visible;
+}
+
+/** Alerts from Bootstrap */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 2rem;
+}
+
+.alert-danger {
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    color: #a94442;
+}
+
+.alert-success {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #3c763d;
+}
+
+.alert-info {
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+    color: #31708f;
+}
+
+.alert-success {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #3c763d;
+}
+
+/********************************************
+    MODAL END
+********************************************/
+
+/********************************************
+    HOME SCREEN
+********************************************/
+
+.home {
+    height: 370px;
+    margin-top: 10px;
+    font-size: 1.4rem;
+}
+
+.homeFooterBtn1 {
+    @include spr-sprite("location-roundpin");
+}
+
+.homeFooterBtn2 {
+    @include spr-sprite("location-squarepin");
+}
+
+.location {
+    @include spr-sprite("field");
+    display: inline-block;
+    width: 300px;
+    height: 44px;
+    color: #9C9C9C;
+    padding-top: 12px;
+    padding-left: 35px;
+    font-size: 13px;
+    text-align: left;
+    
+    white-space: nowrap;
+    padding-right: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.field-pin-home {
+    position: absolute;
+    @include spr-sprite("field-pin");
+    display: inline-block;
+    top: 373px;
+    left: 23px;
+    width: 19px;
+    height: 19px;
+}
+
+.img-search {
+    @include spr-sprite("field-search");
+    display: inline-block;
+    width: 19px;
+    height: 19px;
+    margin-top: 10px;
+    margin-left: 15px;
+    float: left;
+}
+
+.btn-searchicon {
+    @include spr-sprite("btn-searchicon");
+}
+
+/********************************************
+    HOME SCREEN END
+********************************************/
+
+/********************************************
+    SEARCHING
+********************************************/
+
+.searching {
+    color: #000;
+    font-size: 21px;
+    line-height: 23px;
+    font-weight: lighter;
+    margin-top: 180px;
+}
+
+/********************************************
+    SEARCHING END
+********************************************/
+
+/********************************************
+    CHECK LOCATION
+********************************************/
+.check_location {
+    width: 320px;
+    height: 340px;
+}
+
+.map-location {
+    position: relative;
+}
+
+.field-pin-check1 {
+    position: absolute;
+    @include spr-sprite("field-pin");
+    display: inline-block;
+    top: 325px;
+    left: 23px;
+    width: 19px;
+    height: 19px;
+}
+
+.field-pin-check2 {
+    position: absolute;
+    @include spr-sprite("field-pin");
+    display: inline-block;
+    top: 368px;
+    left: 23px;
+    width: 19px;
+    height: 19px;
+}
+
+.btn-checkicon{
+    @include spr-sprite("btn-checkicon");
+}
+
+/********************************************
+    CHECK LOCATION END
+********************************************/
+
+/********************************************
+    SEARCH LOCATION
+********************************************/
+
+.search {
+}
+
+.location-container {
+    width: 290px;
+    max-height: 275px;
+    margin: 0 auto;
+    margin-top: 10px;
+    
+    font-size: 1.5rem;
+    
+    background: white;
+    color: black;
+    
+    overflow: hidden;
+}
+
+.location-container:not(:empty) {    
+    border: 1px solid #dddddd;
+}
+
+.location-item label {
+    width: 270px;
+    padding: 10px 0;
+    margin: 0 10px;
+    text-align: left;
+    display: block;
+    
+    border-bottom: 1px solid #666666;
+    
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.location-item:last-child {    
+    margin-bottom: 15px;
+}
+
+.location-item:first-child {
+    font-weight: bold;
+    background-color: #6DC801;
+    color: white;
+}
+
+/********************************************
+    SEARCH LOCATION END
+********************************************/
+
+/********************************************
+    CONFIRM INFORMATION
+********************************************/
+
+.confirm_information {
+    text-align: left;
+    color: #000;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 0 20px 0;
+    width: 100%;
+    height: 343px;
+}
+
+.confirm_information label{
+    overflow: hidden;
+    max-height: 62px;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+}
+
+.strong {
+    padding: 15px 0 3px;
+    font-weight: bold;
+}
+
+.sub {
+    
+}
+
+.confirm_information .disabled {
+    color: grey;
+}
+
+#timeChooser {
+    font-size: 1.5rem;
+    
+    width: 120px;
+    height: 40px;
+    line-height: 38px;
+    
+    background-color: white;
+    
+    padding-left: 15px;
+    border: 1px solid grey;
+}
+
+.clock {
+    width: 20px;
+    height: 20px;
+    display: block;
+    margin-top: -30px;
+    margin-left: 90px;
+    float: left;
+    @include spr-sprite("field-departure");
+}
+
+/********************************************
+    CONFIRM INFORMATION END
+********************************************/
+
+/********************************************
+    RECEIPT
+********************************************/
+
+.receipt {
+    text-align: left;
+    color: #000;
+    font-size: 15px;
+    line-height: 17px;
+    padding: 0 20px 0;
+    width: 100%;
+    height: 343px;
+
+}
+
+.receipt label {
+    overflow: hidden;
+    max-height: 36px;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+}
+
+.receipt .reservation_number {
+    font-size: 17px;
+}
+
+.receipt .logo_and_reservation {
+    margin-top: 20px;
+}
+
+.receipt .receipt_logo {
+    display: inline-block;
+}
+
+.receipt .reservation {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.receipt .reservation .strong {
+    padding: 3px 0 3px;
+}
+
+.receipt .enjoy_message {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 10px;
+    line-height: 135%;
+    display: none;
+}
+
+@media print {
+
+    .receipt {
+        height: auto;
+        padding: 0 10px;
+        font-size: 20px;
+        line-height: 22px;
+        
+        .enjoy_message {
+            display: inherit;
+            font-size: 2.4rem;
+            line-height: 135%;
+        }
+        
+        label {
+            max-height: 46px;
+        }
+        
+        .reservation_number {
+            font-size: 22px;
+        }
+    }
+}
+
+/********************************************
+    RECEIPT END
+********************************************/
+
+/********************************************
+    LANDSCAPE ADJUSTMENTS
+********************************************/
+
+@media only screen and (min-width : 480px) {
+    @import "landscape/*.png";
+
+    body {
+        background: #FFF url(../img/background-landscape.png) no-repeat;
+        width: 480px;
+        height: 320px;
+    }
+    
+    input {
+        width: 400px;
+    }
+
+    .input {        
+        @include landscape-sprite("field-landscape");
+        width: 460px;   
+    }
+    
+    .bar {
+        @include landscape-sprite("top-landscape");
+    }
+    
+    .footer {
+        width: 480px;
+    }
+    
+    .home {
+        height: 220px;
+    }
+    
+    .marginTop {
+        margin-top: 125px;
+    }
+    
+    .location {
+        @include landscape-sprite("field-landscape");
+        width: 460px;  
+    }
+    
+    .field-pin-home {
+        top: 217px;
+    }
+    
+    .location-container {
+        width: 460px;
+        max-height: 115px;
+    }
+    
+    .location-item label {
+        width: 440px;
+    }
+    
+    .searching {
+        margin-top: 100px;
+    }
+    
+    .check_location {
+        width: 480px;
+        height: 183px;
+    }
+    
+    .confirm_information > div {
+        display: inline-block;
+        width: 210px;
+        vertical-align: top;
+    }   
+    
+    .receipt > div {
+        display: inline-block;
+        width: 210px;
+        vertical-align: top;
+    }  
+    
+    .receipt > .logo_and_reservation {
+        width: 226px;
+        margin-top: 12px;
+    }  
+    
+    .receipt > .destination {
+        width: 226px;
+    }  
+    
+    .receipt > .enjoy_message {
+        display: none;
+    }
+}
+
+/********************************************
+    LANDSCAPE END
+********************************************/

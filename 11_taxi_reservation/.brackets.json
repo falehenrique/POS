@@ -1,0 +1,36 @@
+{
+    "fileFilters": [
+        {
+            "name": "Auto Generated",
+            "patterns": [
+                "libs/",
+                "node_modules/",
+                "dist/",
+                "compiled.js",
+                "test/output/",
+                ".sass-cache",
+                "css",
+                "doc",
+                "build"
+            ]
+        }
+    ],
+    "me.drewh.jsbeautify.on_save": true,
+    "dimitrk.exclude-indexing-filetree.excludeList": [
+        ".git(?!ignore)",
+        "dist",
+        "bower_components",
+        "node_modules",
+        "libs",
+        ".sass-cache",
+        "output",
+        "delivery",
+        "compiled",
+        "css",
+        "build"
+    ],
+    "jslint.options": {
+        "nomen": true,
+        "plusplus": true
+    }
+}

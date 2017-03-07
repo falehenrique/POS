@@ -1,0 +1,86 @@
+
+.rollerContainer{
+	overflow: hidden;
+	position: relative;	
+	-webkit-user-select: none;
+	background: white;
+	display: inline-block;
+	font-family: Arial;
+}
+
+.rollerContainer .roller{
+	width: 100%;
+	position: absolute; 
+	top: 0px; 
+	left: 0px; 
+	z-index: 9; 
+}
+
+.rollerContainer .effect {	
+	height: 100%;
+	width: 100%;
+	z-index: 999;
+	position: absolute;
+	top: 0;
+	
+	background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(50%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,1)));
+	background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 50%,rgba(255,255,255,1) 100%);
+	background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 50%,rgba(255,255,255,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 50%,rgba(255,255,255,1) 100%);
+	background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 50%,rgba(255,255,255,1) 100%);
+}
+
+.rollerContainer .indicator {
+	width: 100%;
+	z-index: 1000;
+	position: absolute;
+	border-top: 1px solid lightgrey;
+	border-bottom: 1px solid lightgrey;
+	border-left: 4px solid white;
+	border-right: 4px solid white;
+}
+
+.rollerContainer  span {
+	display: block;
+	color: grey;
+	vertical-align: middle;
+	width: 100%;
+	text-align: center;
+}
+
+.rollerContainer  .selected {
+	color: black;
+}
+
+.timeContainer  {
+	display: inline-block;
+	margin: 0 auto;
+	padding: 20px;
+	background: white;
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	border-radius: 8px;
+}
+
+.selectContainer  {
+	display: inline-block;
+	margin: 0 auto;
+	padding: 20px;
+	background: white;
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	border-radius: 8px;
+}
+
+#backgroundDiv {	
+	z-index: 9999;
+	position: absolute;
+	top: 0px;
+	left : 0px;
+	bottom : 0px;
+	right : 0px;
+	background-color: rgba(0,0,0,0.5);
+}

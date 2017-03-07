@@ -1,0 +1,27 @@
+{
+  "name": "tetra",
+  "main": "tetra.js",
+  "authors": [
+    "Luis NOVO",
+    "Nicolas RAIBAUD"
+  ],
+  "description": "Tetra bridge library",
+  "license": "PRIVATE",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "0f15a14201",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "0f15a1420191bb6fc7f143eeab0140cb8c025adf"
+  },
+  "_source": "C:\\Projects\\html5demos\\trunk\\demos\\common_libraries\\tetra\\.git",
+  "_target": "*",
+  "_originalSource": "C:\\Projects\\html5demos\\trunk\\demos\\common_libraries\\tetra\\.git"
+}

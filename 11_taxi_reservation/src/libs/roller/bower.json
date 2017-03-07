@@ -1,0 +1,18 @@
+{
+  "name": "roller",
+  "main": "roller.js",
+  "version": "0.0.2",
+  "authors": [
+    "Rafael <rafael.itajuba@venturus.org.br>"
+  ],
+  "description": "Roller library",
+  "license": "PRIVATE",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

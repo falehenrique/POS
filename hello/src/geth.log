@@ -1,0 +1,25 @@
+I1211 14:11:35.155805 cmd/utils/flags.go:624] WARNING: No etherbase set and no accounts found as default
+I1211 14:11:35.156104 ethdb/database.go:83] Allotted 128MB cache and 1024 file handles to /Users/hgleite/Library/Ethereum/geth/chaindata
+I1211 14:11:35.207076 ethdb/database.go:176] closed db:/Users/hgleite/Library/Ethereum/geth/chaindata
+I1211 14:11:35.208148 node/node.go:176] instance: Geth/v1.5.4-stable-b70acf3c/darwin/go1.7
+I1211 14:11:35.208188 ethdb/database.go:83] Allotted 128MB cache and 1024 file handles to /Users/hgleite/Library/Ethereum/geth/chaindata
+I1211 14:11:35.265569 eth/backend.go:189] Protocol Versions: [63 62], Network Id: 1
+I1211 14:11:35.265958 eth/backend.go:217] Chain config: {ChainID: 1 Homestead: 1150000 DAO: 1920000 DAOSupport: true EIP150: 2463000 EIP155: 2675000 EIP158: 2675000}
+I1211 14:11:35.268174 core/blockchain.go:219] Last header: #0 [d4e56740…] TD=17179869184
+I1211 14:11:35.268212 core/blockchain.go:220] Last block: #0 [d4e56740…] TD=17179869184
+I1211 14:11:35.268231 core/blockchain.go:221] Fast block: #0 [d4e56740…] TD=17179869184
+I1211 14:11:35.269387 p2p/server.go:342] Starting Server
+I1211 14:11:37.404481 p2p/discover/udp.go:227] Listening, enode://351dabcb09ff150c489115159f2ce05aff95fca218f15964840096bb9110e493143dafe6a464b8f09b066494e913ece1f9416589032a3b36cf2c17cb34785c06@[::]:30303
+I1211 14:11:37.404720 p2p/server.go:610] Listening on [::]:30303
+I1211 14:11:37.406598 node/node.go:341] IPC endpoint opened: /Users/hgleite/Library/Ethereum/geth.ipc
+I1211 14:12:09.980093 p2p/discover/ntp.go:58] ---------------------------------------------------------------------------------
+I1211 14:12:09.980121 p2p/discover/ntp.go:59] System clock seems off by 1m26.023102912s, which can prevent network connectivity
+I1211 14:12:09.980132 p2p/discover/ntp.go:60] Please enable network time synchronisation in system settings
+I1211 14:12:09.980143 p2p/discover/ntp.go:61] ---------------------------------------------------------------------------------
+I1211 14:13:35.146079 node/node.go:373] IPC endpoint closed: /Users/hgleite/Library/Ethereum/geth.ipc
+I1211 14:13:35.146130 core/blockchain.go:592] Chain manager stopped
+I1211 14:13:35.146150 eth/handler.go:228] Stopping ethereum protocol handler...
+I1211 14:13:35.146175 eth/handler.go:249] Ethereum protocol handler stopped
+I1211 14:13:35.146199 core/tx_pool.go:195] Transaction pool stopped
+I1211 14:13:35.146229 eth/backend.go:519] Automatic pregeneration of ethash DAG OFF (ethash dir: /Users/hgleite/.ethash)
+I1211 14:13:35.165490 ethdb/database.go:176] closed db:/Users/hgleite/Library/Ethereum/geth/chaindata

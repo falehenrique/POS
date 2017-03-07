@@ -1,0 +1,754 @@
+/* line 136, spr/*.png */
+.spr-sprite, .input, .bar, .back span, .back:active span, .homeFooterBtn1, .homeFooterBtn2, .location, .field-pin-home, .img-search, .btn-searchicon, .field-pin-check1, .field-pin-check2, .btn-checkicon, .clock {
+  background-image: url('../img/spr-sb59551e834.png');
+  background-repeat: no-repeat;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(../fonts/Roboto-Regular.ttf);
+}
+@font-face {
+  font-family: Roboto;
+  src: url("../fonts/Roboto-Bold.ttf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: Roboto;
+  src: url("../fonts/Roboto-Light.ttf");
+  font-weight: lighter;
+}
+/* line 20, ../sass/app.scss */
+html {
+  font-family: Roboto;
+  color: white;
+  font-size: 62.5%;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+}
+
+/* line 28, ../sass/app.scss */
+body {
+  overflow: hidden;
+  position: absolute;
+  background: #FFF url(../img/background.png) no-repeat;
+  width: 320px;
+  height: 480px;
+}
+
+/* line 38, ../sass/app.scss */
+h1 {
+  padding-top: 16px;
+  margin-left: 18px;
+  height: 43px;
+  font-weight: lighter;
+  font-size: 2.2rem;
+}
+
+/* line 46, ../sass/app.scss */
+h2 {
+  font-size: 1.9rem;
+  font-weight: bold;
+}
+
+/* line 52, ../sass/app.scss */
+input {
+  border: none;
+  height: 34px;
+  margin-left: 5px;
+  margin-top: 2px;
+  width: 240px;
+}
+
+/* line 61, ../sass/app.scss */
+.page {
+  overflow: hidden;
+}
+
+/* line 65, ../sass/app.scss */
+.input {
+  font-size: 13px;
+  height: 41px;
+  margin-left: 10px;
+  margin-top: 12px;
+  text-align: left;
+  background-position: 0 -149px;
+  width: 300px;
+}
+
+/* line 77, ../sass/app.scss */
+.hide {
+  display: none;
+}
+
+/* line 81, ../sass/app.scss */
+.wrap {
+  text-align: center;
+}
+
+/********************************************
+    HEADER
+********************************************/
+/* line 89, ../sass/app.scss */
+.bar {
+  height: 72px;
+  background-position: 0 -299px;
+}
+
+/* line 95, ../sass/app.scss */
+.title {
+  text-align: center;
+  color: #000;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  font-size: 1.9rem;
+}
+
+/* line 104, ../sass/app.scss */
+.back {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 48px;
+  height: 48px;
+}
+
+/* line 112, ../sass/app.scss */
+.back span {
+  background-position: 0 -257px;
+  position: relative;
+  top: 12px;
+  left: 12px;
+  width: 16px;
+  height: 21px;
+  display: block;
+}
+
+/* line 122, ../sass/app.scss */
+.back:active span {
+  background-position: 0 -278px;
+}
+
+/********************************************
+    HEADER END
+********************************************/
+/********************************************
+    FOOTER
+********************************************/
+/* line 134, ../sass/app.scss */
+.footer {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 320px;
+  height: 66px;
+  font-size: 1.2rem;
+  z-index: 9;
+}
+
+/* line 144, ../sass/app.scss */
+.footerSplit .button {
+  width: 50%;
+  float: left;
+}
+
+/* line 149, ../sass/app.scss */
+.footer .button {
+  height: 100%;
+  cursor: pointer;
+}
+
+/* line 154, ../sass/app.scss */
+.footer .btn2 {
+  background: url(../img/btn-bottom.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+/* line 159, ../sass/app.scss */
+.footer .btn2:active {
+  background: url(../img/btn-bottomhover.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+/* line 164, ../sass/app.scss */
+.footer .btn1 {
+  background: url(../img/btn-bottom-other.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+/* line 169, ../sass/app.scss */
+.footer .btn1:active {
+  background: url(../img/btn-bottomhover-other.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+/* line 174, ../sass/app.scss */
+.footerIcon {
+  margin-top: 18px;
+  margin-left: 15px;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+}
+
+/* line 182, ../sass/app.scss */
+.footerTexts {
+  display: inline-block;
+  width: 110px;
+  text-align: left;
+}
+
+/* line 188, ../sass/app.scss */
+.buttonText {
+  font-size: 1.6rem;
+  font-weight: bold;
+  line-height: 24px;
+  width: 100%;
+  display: inline-block;
+}
+
+/* line 199, ../sass/app.scss */
+.btnAlignCenter {
+  text-align: center;
+}
+
+/********************************************
+    FOOTER END
+********************************************/
+/********************************************
+    PRINTING
+********************************************/
+@media print {
+  /* line 212, ../sass/app.scss */
+  .bar, .footer {
+    display: none;
+  }
+
+  /* line 216, ../sass/app.scss */
+  body {
+    width: 384px;
+    height: auto;
+    overflow: auto;
+    background-color: #FFF;
+    background-image: none;
+  }
+}
+/********************************************
+    PRINTING END
+********************************************/
+/********************************************
+    GENERAL
+********************************************/
+/* line 233, ../sass/app.scss */
+.marginTop {
+  margin-top: 282px;
+}
+
+/* line 237, ../sass/app.scss */
+#map {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -9999;
+}
+
+/********************************************
+    GENERAL END
+********************************************/
+/********************************************
+    MODAL
+********************************************/
+/* line 252, ../sass/app.scss */
+.modal {
+  position: absolute;
+  bottom: 30px;
+  left: 10px;
+  right: 10px;
+  opacity: 0;
+  visibility: none;
+  transition: all 200ms;
+  z-index: 10;
+}
+
+/* line 263, ../sass/app.scss */
+.modal.active {
+  bottom: 50px;
+  opacity: 1;
+  visibility: visible;
+}
+
+/** Alerts from Bootstrap */
+/* line 270, ../sass/app.scss */
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-size: 2rem;
+}
+
+/* line 278, ../sass/app.scss */
+.alert-danger {
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  color: #a94442;
+}
+
+/* line 284, ../sass/app.scss */
+.alert-success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #3c763d;
+}
+
+/* line 290, ../sass/app.scss */
+.alert-info {
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+  color: #31708f;
+}
+
+/* line 296, ../sass/app.scss */
+.alert-success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #3c763d;
+}
+
+/********************************************
+    MODAL END
+********************************************/
+/********************************************
+    HOME SCREEN
+********************************************/
+/* line 310, ../sass/app.scss */
+.home {
+  height: 370px;
+  margin-top: 10px;
+  font-size: 1.4rem;
+}
+
+/* line 316, ../sass/app.scss */
+.homeFooterBtn1 {
+  background-position: 0 -193px;
+}
+
+/* line 320, ../sass/app.scss */
+.homeFooterBtn2 {
+  background-position: 0 -225px;
+}
+
+/* line 324, ../sass/app.scss */
+.location {
+  background-position: 0 -149px;
+  display: inline-block;
+  width: 300px;
+  height: 44px;
+  color: #9C9C9C;
+  padding-top: 12px;
+  padding-left: 35px;
+  font-size: 13px;
+  text-align: left;
+  white-space: nowrap;
+  padding-right: 10px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* line 341, ../sass/app.scss */
+.field-pin-home {
+  position: absolute;
+  background-position: 0 -111px;
+  display: inline-block;
+  top: 373px;
+  left: 23px;
+  width: 19px;
+  height: 19px;
+}
+
+/* line 351, ../sass/app.scss */
+.img-search {
+  background-position: 0 -130px;
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  margin-top: 10px;
+  margin-left: 15px;
+  float: left;
+}
+
+/* line 361, ../sass/app.scss */
+.btn-searchicon {
+  background-position: 0 -59px;
+}
+
+/********************************************
+    HOME SCREEN END
+********************************************/
+/********************************************
+    SEARCHING
+********************************************/
+/* line 373, ../sass/app.scss */
+.searching {
+  color: #000;
+  font-size: 21px;
+  line-height: 23px;
+  font-weight: lighter;
+  margin-top: 180px;
+}
+
+/********************************************
+    SEARCHING END
+********************************************/
+/********************************************
+    CHECK LOCATION
+********************************************/
+/* line 388, ../sass/app.scss */
+.check_location {
+  width: 320px;
+  height: 340px;
+}
+
+/* line 393, ../sass/app.scss */
+.map-location {
+  position: relative;
+}
+
+/* line 397, ../sass/app.scss */
+.field-pin-check1 {
+  position: absolute;
+  background-position: 0 -111px;
+  display: inline-block;
+  top: 325px;
+  left: 23px;
+  width: 19px;
+  height: 19px;
+}
+
+/* line 407, ../sass/app.scss */
+.field-pin-check2 {
+  position: absolute;
+  background-position: 0 -111px;
+  display: inline-block;
+  top: 368px;
+  left: 23px;
+  width: 19px;
+  height: 19px;
+}
+
+/* line 417, ../sass/app.scss */
+.btn-checkicon {
+  background-position: 0 0;
+}
+
+/********************************************
+    CHECK LOCATION END
+********************************************/
+/********************************************
+    SEARCH LOCATION
+********************************************/
+/* line 432, ../sass/app.scss */
+.location-container {
+  width: 290px;
+  max-height: 275px;
+  margin: 0 auto;
+  margin-top: 10px;
+  font-size: 1.5rem;
+  background: white;
+  color: black;
+  overflow: hidden;
+}
+
+/* line 446, ../sass/app.scss */
+.location-container:not(:empty) {
+  border: 1px solid #dddddd;
+}
+
+/* line 450, ../sass/app.scss */
+.location-item label {
+  width: 270px;
+  padding: 10px 0;
+  margin: 0 10px;
+  text-align: left;
+  display: block;
+  border-bottom: 1px solid #666666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* line 464, ../sass/app.scss */
+.location-item:last-child {
+  margin-bottom: 15px;
+}
+
+/* line 468, ../sass/app.scss */
+.location-item:first-child {
+  font-weight: bold;
+  background-color: #6DC801;
+  color: white;
+}
+
+/********************************************
+    SEARCH LOCATION END
+********************************************/
+/********************************************
+    CONFIRM INFORMATION
+********************************************/
+/* line 482, ../sass/app.scss */
+.confirm_information {
+  text-align: left;
+  color: #000;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 0 20px 0;
+  width: 100%;
+  height: 343px;
+}
+
+/* line 492, ../sass/app.scss */
+.confirm_information label {
+  overflow: hidden;
+  max-height: 62px;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+}
+
+/* line 501, ../sass/app.scss */
+.strong {
+  padding: 15px 0 3px;
+  font-weight: bold;
+}
+
+/* line 510, ../sass/app.scss */
+.confirm_information .disabled {
+  color: grey;
+}
+
+/* line 514, ../sass/app.scss */
+#timeChooser {
+  font-size: 1.5rem;
+  width: 120px;
+  height: 40px;
+  line-height: 38px;
+  background-color: white;
+  padding-left: 15px;
+  border: 1px solid grey;
+}
+
+/* line 527, ../sass/app.scss */
+.clock {
+  width: 20px;
+  height: 20px;
+  display: block;
+  margin-top: -30px;
+  margin-left: 90px;
+  float: left;
+  background-position: 0 -91px;
+}
+
+/********************************************
+    CONFIRM INFORMATION END
+********************************************/
+/********************************************
+    RECEIPT
+********************************************/
+/* line 545, ../sass/app.scss */
+.receipt {
+  text-align: left;
+  color: #000;
+  font-size: 15px;
+  line-height: 17px;
+  padding: 0 20px 0;
+  width: 100%;
+  height: 343px;
+}
+
+/* line 556, ../sass/app.scss */
+.receipt label {
+  overflow: hidden;
+  max-height: 36px;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+}
+
+/* line 565, ../sass/app.scss */
+.receipt .reservation_number {
+  font-size: 17px;
+}
+
+/* line 569, ../sass/app.scss */
+.receipt .logo_and_reservation {
+  margin-top: 20px;
+}
+
+/* line 573, ../sass/app.scss */
+.receipt .receipt_logo {
+  display: inline-block;
+}
+
+/* line 577, ../sass/app.scss */
+.receipt .reservation {
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* line 582, ../sass/app.scss */
+.receipt .reservation .strong {
+  padding: 3px 0 3px;
+}
+
+/* line 586, ../sass/app.scss */
+.receipt .enjoy_message {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 10px;
+  line-height: 135%;
+  display: none;
+}
+
+@media print {
+  /* line 596, ../sass/app.scss */
+  .receipt {
+    height: auto;
+    padding: 0 10px;
+    font-size: 20px;
+    line-height: 22px;
+  }
+  /* line 602, ../sass/app.scss */
+  .receipt .enjoy_message {
+    display: inherit;
+    font-size: 2.4rem;
+    line-height: 135%;
+  }
+  /* line 608, ../sass/app.scss */
+  .receipt label {
+    max-height: 46px;
+  }
+  /* line 612, ../sass/app.scss */
+  .receipt .reservation_number {
+    font-size: 22px;
+  }
+}
+/********************************************
+    RECEIPT END
+********************************************/
+/********************************************
+    LANDSCAPE ADJUSTMENTS
+********************************************/
+@media only screen and (min-width: 480px) {
+  /* line 56, landscape/*.png */
+  .landscape-sprite, .input, .bar, .location {
+    background-image: url('../img/landscape-sb757e74aa3.png');
+    background-repeat: no-repeat;
+  }
+
+  /* line 629, ../sass/app.scss */
+  body {
+    background: #FFF url(../img/background-landscape.png) no-repeat;
+    width: 480px;
+    height: 320px;
+  }
+
+  /* line 635, ../sass/app.scss */
+  input {
+    width: 400px;
+  }
+
+  /* line 639, ../sass/app.scss */
+  .input {
+    background-position: 0 0;
+    width: 460px;
+  }
+
+  /* line 644, ../sass/app.scss */
+  .bar {
+    background-position: 0 -44px;
+  }
+
+  /* line 648, ../sass/app.scss */
+  .footer {
+    width: 480px;
+  }
+
+  /* line 652, ../sass/app.scss */
+  .home {
+    height: 220px;
+  }
+
+  /* line 656, ../sass/app.scss */
+  .marginTop {
+    margin-top: 125px;
+  }
+
+  /* line 660, ../sass/app.scss */
+  .location {
+    background-position: 0 0;
+    width: 460px;
+  }
+
+  /* line 665, ../sass/app.scss */
+  .field-pin-home {
+    top: 217px;
+  }
+
+  /* line 669, ../sass/app.scss */
+  .location-container {
+    width: 460px;
+    max-height: 115px;
+  }
+
+  /* line 674, ../sass/app.scss */
+  .location-item label {
+    width: 440px;
+  }
+
+  /* line 678, ../sass/app.scss */
+  .searching {
+    margin-top: 100px;
+  }
+
+  /* line 682, ../sass/app.scss */
+  .check_location {
+    width: 480px;
+    height: 183px;
+  }
+
+  /* line 687, ../sass/app.scss */
+  .confirm_information > div {
+    display: inline-block;
+    width: 210px;
+    vertical-align: top;
+  }
+
+  /* line 693, ../sass/app.scss */
+  .receipt > div {
+    display: inline-block;
+    width: 210px;
+    vertical-align: top;
+  }
+
+  /* line 699, ../sass/app.scss */
+  .receipt > .logo_and_reservation {
+    width: 226px;
+    margin-top: 12px;
+  }
+
+  /* line 704, ../sass/app.scss */
+  .receipt > .destination {
+    width: 226px;
+  }
+
+  /* line 708, ../sass/app.scss */
+  .receipt > .enjoy_message {
+    display: none;
+  }
+}
+/********************************************
+    LANDSCAPE END
+********************************************/

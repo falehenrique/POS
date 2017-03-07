@@ -1,0 +1,1 @@
+<div class="searching translatable">KEY_TEXT_SEARCHING</div>

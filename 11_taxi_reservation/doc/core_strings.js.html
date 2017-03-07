@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Taxi Reservation Source: core/strings.js</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.simplex.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top navbar-inverse">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">Taxi Reservation</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="app.html">app</a></li><li><a href="app.appParameters.html">app.appParameters</a></li><li><a href="app.core.html">app.core</a></li><li><a href="app.initializer.html">app.initializer</a></li><li><a href="app.mediator.html">app.mediator</a></li><li><a href="app.mod.html">app.mod</a></li><li><a href="app.pos.html">app.pos</a></li><li><a href="app.strings.html">app.strings</a></li><li><a href="app.stringtable.html">app.stringtable</a></li><li><a href="app.view.html">app.view</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="app.Router.html">app.Router</a></li><li><a href="app.view.Footer.html">app.view.Footer</a></li><li><a href="app.view.Header.html">app.view.Header</a></li><li><a href="app.view.Slider.html">app.view.Slider</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="events.list.html" class="dropdown-toggle" data-toggle="dropdown">Events<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="app.mediator.html#event:modal">app.mediator#event:modal</a></li><li><a href="app.mediator.html#event:viewchangefooter">app.mediator#event:viewchangefooter</a></li><li><a href="app.mediator.html#event:viewchangeheader">app.mediator#event:viewchangeheader</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="global.html">Global</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+		<div class="col-sm-3 col-md-3">
+            <form class="navbar-form" role="search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+	</div>
+
+</div>
+</div>
+
+
+<div class="container" id="toc-content">
+<div class="row">
+
+	
+	<div class="col-md-12">
+	
+		<div id="main">
+			
+
+		<h1 class="page-title">Source: core/strings.js</h1>
+    
+<section>
+    <article>
+        <pre
+            class="sunlight-highlight-javascript linenums">/**
+ * @fileoverview Strings Module
+ * @author Rafael R Itajuba
+ * @author Danilo Bevilacqua Scavassa
+ * @version 2.0.0
+ */
+(function (root) {
+    "use strict";
+
+    // If the app namespace is not set, set it.
+    /* istanbul ignore next */
+    root.app = root.app || {};
+
+    var language = navigator.language,
+        /**
+         * @namespace strings
+         * @description String list for i18n
+         * @memberof app
+         */
+        strings = {
+            /**
+             * @description Transation cache
+             * @type {Object.&lt;string, string>}
+             * @memberof app.strings
+             */
+            labelList: [],
+
+            /**
+             * @description Could have more properties, for more languages
+             * @typedef {object} Translatable
+             * @property {string} key Key Text (to be replaced)
+             * @property {string} pt Text in portuguese (generic)
+             * @property {string} en Text in english (generic)
+             */
+
+            /**
+             * @type {Translatable[]}
+             * @memberof app.strings
+             */
+            translationList: [
+
+                /* Currency related info, according to ISO 4217 table (https://en.wikipedia.org/wiki/ISO_4217) */
+                {
+                    key: 'KEY_CURRENCY_SYMBOL',
+                    pt: 'R$',
+                    en: '$'
+                },
+                {
+                    key: 'KEY_CURRENCY_CODE',
+                    pt: 986,
+                    en: 840
+                },
+                {
+                    key: 'KEY_CURRENCY_MINOR_UNIT',
+                    pt: 2,
+                    en: 2
+                },
+                {
+                    key: 'KEY_CURRENCY_SEPARATOR',
+                    pt: ',',
+                    en: '.'
+                },
+                {
+                    key: 'KEY_CURRENCY_SEPARATOR_THOUSAND',
+                    pt: '',
+                    en: ','
+                },
+                {
+                    key: 'KEY_CURRENCY',
+                    pt: 'BRL',
+                    en: 'USD'
+                },
+                {
+                    key: 'KEY_CURRENCY_DIRECTION',
+                    pt: 'ltr',
+                    en: 'rtl'
+                },
+                {
+                    key: 'KEY_CURRENCY_DIRECTION_EXT',
+                    pt: 'CURRENCY_BEFORE_AMOUNT',
+                    en: 'AMOUNT_BEFORE_CURRENCY'
+                },
+
+                {
+                    key: 'KEY_HOME_TTL',
+                    pt: 'Sua localização',
+                    en: 'Your location'
+                },
+                {
+                    key: 'KEY_CHOOSE_OTHER',
+                    pt: 'Escolha outra',
+                    en: 'Choose other'
+                },
+                {
+                    key: 'KEY_USE_CURRENT',
+                    pt: 'Use essa',
+                    en: 'Use this'
+                },
+                {
+                    key: 'KEY_LOCATION',
+                    pt: 'localização',
+                    en: 'location'
+                },
+
+                {
+                    key: 'KEY_LOADING',
+                    pt: 'Carregando...',
+                    en: 'Loading...'
+                },
+
+                {
+                    key: 'KEY_SEARCH_LOCATION_TTL',
+                    pt: 'Procurar Localização',
+                    en: 'Search Location'
+                },
+                {
+                    key: 'KEY_TEXT_SEARCH_LOCATION',
+                    pt: 'Insira o endereço',
+                    en: 'Insert address'
+                },
+                {
+                    key: 'KEY_CONFIRM',
+                    pt: 'Confirmar',
+                    en: 'Confirm'
+                },
+
+                {
+                    key: 'KEY_SEARCH_DESTINATION_TTL',
+                    pt: 'Procurar Destino',
+                    en: 'Search Destination'
+                },
+                {
+                    key: 'KEY_TEXT_DESTINATION',
+                    pt: 'Insira o endereço destino',
+                    en: 'Insert destination address'
+                },
+                {
+                    key: 'KEY_SEARCH',
+                    pt: 'Procurar',
+                    en: 'Search'
+                },
+                {
+                    key: 'KEY_ROUTE',
+                    pt: 'rota',
+                    en: 'route'
+                },
+
+                {
+                    key: 'KEY_SEARCHING_TTL',
+                    pt: 'Procurando Rota',
+                    en: 'Searching Route'
+                },
+                {
+                    key: 'KEY_TEXT_SEARCHING',
+                    pt: 'Procurando...',
+                    en: 'Searching...'
+                },
+
+                {
+                    key: 'KEY_CHECK_LOCATION_TTL',
+                    pt: 'Verificar Localização',
+                    en: 'Check Location'
+                },
+                {
+                    key: 'KEY_ADDRESSES',
+                    pt: 'endereços',
+                    en: 'addresses'
+                },
+
+                {
+                    key: 'KEY_CONFIRM_INFORMARION_TTL',
+                    pt: 'Confirmar informações',
+                    en: 'Confirm ride information'
+                },
+                {
+                    key: 'KEY_REQUEST_TAXI',
+                    pt: 'Pedir taxi',
+                    en: 'Request taxi'
+                },
+                {
+                    key: 'KEY_AND_PAY',
+                    pt: 'e pagar',
+                    en: 'and pay'
+                },
+                {
+                    key: 'KEY_INITIAL_LOCATION',
+                    pt: 'Local de partida',
+                    en: 'Initial location'
+                },
+                {
+                    key: 'KEY_DESTINATION',
+                    pt: 'Destino',
+                    en: 'Destination'
+                },
+                {
+                    key: 'KEY_FARE',
+                    pt: 'Tarifa',
+                    en: 'Fare'
+                },
+                {
+                    key: 'KEY_DERATTURE_TIME',
+                    pt: 'Hora de partida',
+                    en: 'Departure time'
+                },
+
+                {
+                    key: 'KEY_RECEIPT_TTL',
+                    pt: 'Recibo',
+                    en: 'Receipt'
+                },
+                {
+                    key: 'KEY_PRINT',
+                    pt: 'Imprimir',
+                    en: 'Print'
+                },
+                {
+                    key: 'KEY_SKIP',
+                    pt: 'Pular',
+                    en: 'Skip'
+                },
+                {
+                    key: 'KEY_RECEIPT',
+                    pt: 'recibo',
+                    en: 'receipt'
+                },
+                {
+                    key: 'KEY_RESERVATION_NUMBER',
+                    pt: 'Número da reserva',
+                    en: 'Reservation number'
+                },
+                {
+                    key: 'KEY_ENJOY_YOUR_RIDE',
+                    pt: 'Aproveite sua corrida',
+                    en: 'Enjoy your ride'
+                },
+
+                {
+                    key: 'KEY_NOT_FOUND',
+                    pt: 'Destino ou Origem Não Encontrado.',
+                    en: 'Destination or Origin Not Found.'
+                },
+                {
+                    key: 'KEY_INVALID_DESTINATION',
+                    pt: 'Destino inválido. Não deve ser igual ao local de origem.',
+                    en: 'Invalid destination. It must not be equal to origin location.'
+                },
+                {
+                    key: 'KEY_EMPTY_DESTINATION',
+                    pt: 'Destino inválido. Não deve estar em branco.',
+                    en: 'Invalid destination. It must not be blank.'
+                },
+                {
+                    key: 'KEY_TRANSACTION_ERROR',
+                    pt: 'A transação falhou, por favor tente novamente.',
+                    en: 'Transaction failed, please try again',
+                    fr: "La transaction a échoué, s'il vous plaît essayez à nouveau"
+                },
+                {
+                    key: 'KEY_ZERO_RESULTS',
+                    pt: 'Não há rotas entre estes dois locais.',
+                    en: 'There is no route between those places.'
+                }
+            ],
+
+            /**
+             * Load labelList from a given language
+             * @param {string} language language code (like pt-BR) to be loaded
+             * @memberof app.strings
+             */
+            load: function (language) {
+                var i = 0;
+
+                // English is fallback
+                for (i = 0; i &lt; this.translationList.length; i += 1) {
+                    this.labelList[this.translationList[i].key] = this.translationList[i][language] || this.translationList[i][language.substr(0, 2)] || this.translationList[i].en;
+                }
+            }
+        };
+
+    // Sets the mediator object on the app namespace
+    root.app.strings = strings;
+
+    // Load the specified language from translationList
+    root.app.strings.load(language);
+
+}(window));</pre>
+    </article>
+</section>
+
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+
+</div>
+</div>
+
+<div class="modal fade" id="searchResults">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Search results</h4>
+      </div>
+      <div class="modal-body"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div>
+
+<footer>
+
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a>
+	
+		on Wed May 11th 2016
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+<script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : true,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			var id = $( heading ).attr( "id" );
+			return id && id.replace(/\~/g, '-inner-').replace(/\./g, '-static-') || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+<script>
+	$( function () {
+		$( '#main' ).localScroll( {
+			offset : { top : 60 } //offset by the height of your header (give or take a few px, see what works for you)
+		} );
+		$( "dt.name" ).each( function () {
+			var $this = $( this ).find("h4");
+			var icon = $( "<i/>" ).addClass( "icon-plus-sign" ).addClass( "pull-right" ).addClass( "icon-white" );
+			var dt = $(this);
+			var children = dt.next( "dd" );
+
+			dt.prepend( icon ).css( {cursor : "pointer"} );
+			dt.addClass( "member-collapsed" ).addClass( "member" );
+
+
+			children.hide();
+
+			dt.children().on( "click", function () {
+				children = dt.next( "dd" );
+				children.slideToggle( "fast", function () {
+
+					if ( children.is( ":visible" ) ) {
+						icon.addClass( "icon-minus-sign" ).removeClass( "icon-plus-sign" ).removeClass( "icon-white" );
+						dt.addClass( "member-open" ).animate( "member-collapsed" );
+					} else {
+						icon.addClass( "icon-plus-sign" ).removeClass( "icon-minus-sign" ).addClass( "icon-white" );
+						dt.addClass( "member-collapsed" ).removeClass( "member-open" );
+					}
+				} );
+			} );
+
+		} );
+	} );
+</script>
+
+
+<!--Google Analytics-->
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		SearcherDisplay.init();
+	});
+</script>
+
+</body>
+</html>

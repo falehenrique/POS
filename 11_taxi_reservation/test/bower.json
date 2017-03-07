@@ -1,0 +1,9 @@
+{
+    "name": "11_taxi_reservation-test",
+    "license": "UNLICENSED",
+    "private": true,
+    "dependencies": {
+        "sinonjs": "1.17.1",
+        "qunit": "1.23.1"
+    }
+}

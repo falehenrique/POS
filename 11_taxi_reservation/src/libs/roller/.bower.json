@@ -1,0 +1,26 @@
+{
+  "name": "roller",
+  "main": "roller.js",
+  "authors": [
+    "Rafael <rafael.itajuba@venturus.org.br>"
+  ],
+  "description": "Roller library",
+  "license": "PRIVATE",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "ac249cdf9d",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "ac249cdf9dc4537aeb3dc39b6517d353d5fd34bd"
+  },
+  "_source": "C:\\Projects\\html5demos\\trunk\\demos\\common_libraries\\roller\\.git",
+  "_target": "*",
+  "_originalSource": "C:\\Projects\\html5demos\\trunk\\demos\\common_libraries\\roller\\.git"
+}
